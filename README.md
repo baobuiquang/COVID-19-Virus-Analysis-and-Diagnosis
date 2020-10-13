@@ -1,1 +1,1 @@
-# COVID-19 (SarsCoV2) Diagnosis from Radiography using Machine Learning Model
+# COVID-19 (Sars CoV 2) Diagnosis from Radiography using Machine Learning Model
