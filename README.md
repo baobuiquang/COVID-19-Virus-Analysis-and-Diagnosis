@@ -1,4 +1,4 @@
-### COVID-19 Virus Analysis and Diagnosis
+## COVID-19 Virus Analysis and Diagnosis
 
 ##### COVID-19 (Sars Cov 2) virus spread analysis using Python and diagnosis from radiography using machine learning model.
 
@@ -12,92 +12,54 @@
    - Objectives of the study
 2. Dataset
    - Data resources
+     - Spread Analysis
+     - Diagnosis
    - Data processing and classification
 3. Method:
    - Overall Approach: 
       - Python
-      - Machine Learning Model
-      - TensorFlow
-   - Detailed Design: 
+      - Machine Learning Model + TensorFlow
+   - Detailed Design:
+      - Jupyter Notebook
       - Teachable Machine
-4. Samples Gathering
-   - Normal
-   - COVID-19 Infected
-   - No Input
-5. Model Training
-6. Testing: Diagnose COVID-19 from radiography
+4. Implementation: COVID-19 virus spread analysis
+   - [Data Processing: Confirmed cases](#Confirmed-cases)
+   - Data Processing: Deaths by COVID-19
+   - Data Processing: Recovered
+   - Data Processing: GDP per capita
+   - Join all dataset into one
+   - Calculate Correlation Matrix
+   - Visualization from data
+5. Implementation: COVID-19 virus diagnosis from radiography
+   - Samples Gathering
+   - Model Training
+   - Model Embedding
+   - Testing
 7. Results:
+   - Conclusion
    - Accuracy
    - Strengths of the method
    - Limitations of the method
 8. References
 
+## Abstract
 
+## Introduction
 
+## Dataset
 
+## Method
 
+## COVID-19 virus spread analysis
 
-# SARS-CoV-2 virus spread analysis using Python
-----------------------
-
-## Dataset Resources
-
-- [Novel Coronavirus (COVID-19) Cases Data](https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases) compiled by the Johns Hopkins University Center for Systems Science and Engineering ([JHU CCSE](https://data.humdata.org/organization/jhucsse))
-  - time_series_covid19_confirmed_global.csv
-  - time_series_covid19_deaths_global.csv
-  - time_series_covid19_recovered_global.csv
-
-
-- [GDP (Gross Domestic Product) per capita](https://ourworldindata.org/grapher/gdp-per-capita-worldbank) published by World Bank – World Development Indicators
-  - gdp-per-capita-worldbank.csv
-
-## Modules
-
-- [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
-
-- [numpy](https://numpy.org/) (scientific computing)
-
-- [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
-
-- [matplotlib](https://matplotlib.org/) (visualizations)
-
-## Note
+#### Note
 - The latest datasets can be used (from the sources I mentioned above), as long as the files' structure hasn't been changed.
 - Adjust the values in `.sort_values` method to the latest date in the datasets.
 - Change the `name_country` in `.loc[country_name]` method to see the data of what country you want.
 - `.head(1000)` lists all the rows in dataset. Change `1000` to the number of rows you want to list. `.head()` will list 5 rows by default.
 - Use `dataset_name.shape` to see the number of rows and columns of the dataset.
 
-## Table of content
-- [Import modules](#Import-modules)
-- [Dataset: Confirmed cases](#Dataset:-Confirmed-cases)
-  - [Confirmed cases in some specific countries](#Confirmed-cases-in-specific-countries)
-  - [Countries with the highest confirmed cases](#Countries-with-the-highest-confirmed-cases)
-  - [Countries with the lowest confirmed cases](#Countries-with-the-lowest-confirmed-cases)
-  - [Look at the data in some specific countries about confirmed cases](#Look-at-the-data-in-some-specific-countries-about-confirmed-cases)
-  - [Calculate the max_infection_rate of all countries and add to dataset_cases](#Calculate-the-max_infection_rate-of-all-countries-and-add-to-dataset_cases)
-- [Dataset: Deaths by COVID-19](#Dataset:-Deaths-by-COVID-19)
-  - [Deaths by COVID-19 in some specific countries](#Deaths-by-COVID-19-in-specific-countries)
-  - [Countries with the highest deaths by COVID-19](#Countries-with-the-highest-deaths-by-COVID-19)
-  - [Look at data in some specific countries about deaths by COVID-19](#Look-at-data-in-some-specific-countries-about-deaths-by-COVID-19)
-  - [Calculate the max_death_rate of all countries and add to dataset_deaths](#Calculate-the-max_death_rate-of-all-countries-and-add-to-dataset_deaths)
-- [Dataset: Recovered](#Dataset:-Recovered)
-  - [Recovered in some specific countries](#Recovered-in-specific-countries)
-  - [Countries with the highest recovered](#Countries-with-the-highest-recovered)
-  - [Look at data in some specific countries about recovered](#Look-at-data-in-some-specific-countries-about-recovered)
-  - [Calculate the max_recovery_rate of all countries and add to dataset_recovered](#Calculate-the-max_recovery_rate-of-all-countries-and-add-to-dataset_recovered)
-- [Dataset: GDP per capita](#Dataset:-GDP-per-capita)
-- [Join all dataset into one](#Join-all-dataset-into-one)
-- [Correlation Matrix](#Correlation-Matrix)
-- [Visualization from data](#Visualization-from-data)
-  - [Recovery Rate](#Recovery-Rate)
-  - [Graph: max_infection_rate and max_death_rate](#Graph:-max_infection_rate-and-max_death_rate)
-  - [Graph: max_infection_rate and max_recovery_rate](#Graph:-max_infection_rate-and-max_recovery_rate)
-  - [Graph: gdp_per_capita and max_infection_rate](#Graph:-gdp_per_capita-and-max_infection_rate)
-  - [Graph: gdp_per_capita and max_recovery_rate](#Graph:-gdp_per_capita-and-max_recovery_rate)
-
-## Import modules
-
+#### Import modules
 
 ```python
 !pip3 install seaborn
@@ -124,9 +86,9 @@ print('All modules are imported successfully!')
     All modules are imported successfully!
     
 
-## Dataset: Confirmed cases
+### Confirmed cases
 
-### Import file
+#### Import file
 
 Import `time_series_covid19_confirmed_global.csv`
 
@@ -149,9 +111,7 @@ dataset_cases.head(1000)
 ```
 
 
-
-
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -484,9 +444,7 @@ dataset_cases.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
-
-
+</div> -->
 
 
 ```python
@@ -496,7 +454,7 @@ dataset_cases_filtered = pd.DataFrame(dataset_cases["9/18/20"])
 dataset_cases_filtered = dataset_cases_filtered.rename(columns={'9/18/20': 'confirmed_cases'})
 ```
 
-### Confirmed cases in specific countries
+#### Confirmed cases in specific countries
 
 
 ```python
@@ -523,7 +481,7 @@ plt.legend()
 
 *Confirmed cases in Vietnam, Singapore, Japan and China*
 
-### Countries with the highest confirmed cases
+#### Countries with the highest confirmed cases
 
 Sort the `dataset_cases` descending by the value in the newest column.
 
@@ -537,7 +495,7 @@ dataset_cases.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -870,7 +828,7 @@ dataset_cases.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
@@ -905,7 +863,7 @@ plt.legend()
 
 *Countries with the highest confirmed cases*
 
-### Countries with the lowest confirmed cases
+#### Countries with the lowest confirmed cases
 
 
 ```python
@@ -917,7 +875,7 @@ dataset_cases.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1250,7 +1208,7 @@ dataset_cases.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
@@ -1285,10 +1243,10 @@ plt.legend()
 
 *Countries with the lowest confirmed cases*
 
-### Look at the data in some specific countries about confirmed cases
+#### Look at the data in some specific countries about confirmed cases
 Calculate the first derivative to see the spread rate
 
-#### Infection rate in Vietnam
+##### Infection rate in Vietnam
 
 
 ```python
@@ -1324,7 +1282,7 @@ dataset_cases.loc["Vietnam"].diff().max()
 
 The `max_infection_rate` in Vietnam is **50.0**
 
-#### Compare the Infection rate in some countries: Vietnam, United State, Italy, Japan and China
+##### Compare the Infection rate in some countries: Vietnam, United State, Italy, Japan and China
 
 
 ```python
@@ -1365,7 +1323,7 @@ dataset_cases.loc["US"].diff().max()
 
 The `max_infection_rate` in US is **77255.0**
 
-### Calculate the `max_infection_rate` of all countries and add to `dataset_cases`
+#### Calculate the `max_infection_rate` of all countries and add to `dataset_cases`
 
 
 ```python
@@ -1386,7 +1344,7 @@ dataset_cases.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1719,7 +1677,7 @@ dataset_cases.head(1000)
   </tbody>
 </table>
 <p>188 rows × 242 columns</p>
-</div>
+</div> -->
 
 
 
@@ -1734,7 +1692,7 @@ dataset_cases.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1807,13 +1765,13 @@ dataset_cases.head(1000)
   </tbody>
 </table>
 <p>188 rows × 1 columns</p>
-</div>
+</div> -->
 
 
 
-## Dataset: Deaths by COVID-19
+### Deaths by COVID-19
 
-### Import file
+#### Import file
 
 Import `time_series_covid19_deaths_global.csv`
 
@@ -1835,7 +1793,7 @@ dataset_deaths.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2168,7 +2126,7 @@ dataset_deaths.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
@@ -2183,7 +2141,7 @@ dataset_deaths.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2516,11 +2474,11 @@ dataset_deaths.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
-### Deaths by COVID-19 in specific countries
+#### Deaths by COVID-19 in specific countries
 
 
 ```python
@@ -2547,7 +2505,7 @@ plt.legend()
 
 *Deaths by COVID-19 in Vietnam, Singapore, Japan and China*
 
-### Countries with the highest deaths by COVID-19
+#### Countries with the highest deaths by COVID-19
 
 
 ```python
@@ -2580,9 +2538,9 @@ plt.legend()
 
 *Countries with the highest deaths by COVID-19*
 
-### Look at data in some specific countries about deaths by COVID-19
+#### Look at data in some specific countries about deaths by COVID-19
 
-#### Death by COVID-19 rate in Vietnam
+##### Death by COVID-19 rate in Vietnam
 
 
 ```python
@@ -2617,7 +2575,7 @@ dataset_deaths.loc["Vietnam"].diff().max()
 
 The `max_death_rate` in Vietnam is **3.0**
 
-#### Compare the deaths rate in some countries: Vietnam, United State, Italy, Japan and China
+##### Compare the deaths rate in some countries: Vietnam, United State, Italy, Japan and China
 
 
 ```python
@@ -2656,7 +2614,7 @@ dataset_deaths.loc["US"].diff().max()
 
 The `max_death_rate` in US is **2609.0**
 
-### Calculate the `max_death_rate` of all countries and add to `dataset_deaths`
+#### Calculate the `max_death_rate` of all countries and add to `dataset_deaths`
 
 
 ```python
@@ -2677,7 +2635,7 @@ dataset_deaths.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3010,7 +2968,7 @@ dataset_deaths.head(1000)
   </tbody>
 </table>
 <p>188 rows × 242 columns</p>
-</div>
+</div> -->
 
 
 
@@ -3025,7 +2983,7 @@ dataset_deaths.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3098,13 +3056,13 @@ dataset_deaths.head(1000)
   </tbody>
 </table>
 <p>188 rows × 1 columns</p>
-</div>
+</div> -->
 
 
 
-## Dataset: Recovered
+### Recovered
 
-### Import file
+#### Import file
 
 Import `time_series_covid19_recovered_global.csv`
 
@@ -3126,7 +3084,7 @@ dataset_recovered.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3459,7 +3417,7 @@ dataset_recovered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
@@ -3482,7 +3440,7 @@ dataset_recovered.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3815,11 +3773,11 @@ dataset_recovered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 241 columns</p>
-</div>
+</div> -->
 
 
 
-### Recovered in specific countries
+#### Recovered in specific countries
 
 
 ```python
@@ -3846,7 +3804,7 @@ plt.legend()
 
 *Recovered in Vietnam, Singapore, Japan and China*
 
-### Countries with the highest recovered
+#### Countries with the highest recovered
 
 
 ```python
@@ -3879,9 +3837,9 @@ plt.legend()
 
 *Countries with the highest recovered*
 
-### Look at data in some specific countries about recovered
+#### Look at data in some specific countries about recovered
 
-#### Recovery rate in Vietnam
+##### Recovery rate in Vietnam
 
 
 ```python
@@ -3916,7 +3874,7 @@ dataset_recovered.loc["Vietnam"].diff().max()
 
 The `max_recovery_rate` in Vietnam is **59.0**
 
-#### Recovery rate in United State
+##### Recovery rate in United State
 
 
 ```python
@@ -3951,7 +3909,7 @@ dataset_recovered.loc["US"].diff().max()
 
 The `max_recovery_rate` in US is **103921.0**
 
-### Calculate the `max_recovery_rate` of all countries and add to `dataset_recovered`
+#### Calculate the `max_recovery_rate` of all countries and add to `dataset_recovered`
 
 
 ```python
@@ -3972,7 +3930,7 @@ dataset_recovered.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -4305,7 +4263,7 @@ dataset_recovered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 242 columns</p>
-</div>
+</div> -->
 
 
 
@@ -4397,9 +4355,9 @@ dataset_recovered.head(1000)
 
 
 
-## Dataset: GDP per capita
+### GDP per capita
 
-### Import file
+#### Import file
 
 Import `gdp-per-capita-worldbank.csv`
 
@@ -4426,7 +4384,7 @@ dataset_country.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -4499,11 +4457,11 @@ dataset_country.head(1000)
   </tbody>
 </table>
 <p>231 rows × 1 columns</p>
-</div>
+</div> -->
 
 
 
-## Join all dataset into one
+### Join all dataset into one
 
 
 ```python
@@ -4852,7 +4810,7 @@ data.head(1000)
 </div>
 
 
-## Correlation Matrix
+### Calculate Correlation Matrix
 
 Correlation coefficients between `max_infection_rate`, `max_death_rate`, `max_recovery_rate` and `gdp_per_capita`
 
@@ -4921,10 +4879,10 @@ data.corr()
 </div>
 
 
-# Visualization from data
+### Visualization from data
 ________________________
 
-### Recovery Rate
+#### Recovery Rate
 
 Join the `dataset_cases_filtered` and `dataset_recovered_filtered` into `data_filtered`
 
@@ -4937,7 +4895,7 @@ data_filtered.head(1000)
 ```
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -5023,7 +4981,7 @@ data_filtered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 2 columns</p>
-</div>
+</div> -->
 
 
 Calculate the `recovery_rate` column by dividing the `recovered` by the `confirmed_cases`
@@ -5059,7 +5017,7 @@ data_filtered.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -5158,7 +5116,7 @@ data_filtered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 3 columns</p>
-</div>
+</div> -->
 
 
 ```python
@@ -5174,7 +5132,7 @@ data_filtered["recovery_rate"].plot(kind = 'bar', figsize=(42, 6), legend = True
 
 *Recovery rate of all countries*
 
-### Graph: `max_infection_rate` and `max_death_rate`
+#### Graph: `max_infection_rate` and `max_death_rate`
 
 
 ```python
@@ -5207,7 +5165,7 @@ sns.regplot(x, y)
     
 
 
-### Graph: `max_infection_rate` and `max_recovery_rate`
+#### Graph: `max_infection_rate` and `max_recovery_rate`
 
 
 ```python
@@ -5239,7 +5197,7 @@ sns.regplot(x, y)
     
 
 
-### Graph: `gdp_per_capita` and `max_infection_rate`
+#### Graph: `gdp_per_capita` and `max_infection_rate`
 
 
 ```python
@@ -5272,7 +5230,7 @@ sns.regplot(x, np.log(y))
 
 <!-- > #### The result shows that people who are living developed country (higher GDP per capita) are more prone to get infection of SarsCoV2 virus -->
 
-### Graph: `gdp_per_capita` and `max_recovery_rate`
+#### Graph: `gdp_per_capita` and `max_recovery_rate`
 
 
 ```python
@@ -5305,3 +5263,36 @@ sns.regplot(x, y)
 > #### The result shows that people who are living in a developed country (higher GDP per capita) are more prone to get infection of SarsCoV2 virus. 
 
 > #### The maximum recovery rate of a country is not affected by its development. Developed countries are as vulnerable to COVID-19 pandemic as developing countries.
+
+## COVID-19 virus diagnosis from radiography
+
+## Results
+
+## References
+
+
+
+
+
+
+
+### Dataset Resources
+
+- [Novel Coronavirus (COVID-19) Cases Data](https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases) compiled by the Johns Hopkins University Center for Systems Science and Engineering ([JHU CCSE](https://data.humdata.org/organization/jhucsse))
+  - time_series_covid19_confirmed_global.csv
+  - time_series_covid19_deaths_global.csv
+  - time_series_covid19_recovered_global.csv
+
+
+- [GDP (Gross Domestic Product) per capita](https://ourworldindata.org/grapher/gdp-per-capita-worldbank) published by World Bank – World Development Indicators
+  - gdp-per-capita-worldbank.csv
+
+### Modules
+
+- [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
+
+- [numpy](https://numpy.org/) (scientific computing)
+
+- [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
+
+- [matplotlib](https://matplotlib.org/) (visualizations)
