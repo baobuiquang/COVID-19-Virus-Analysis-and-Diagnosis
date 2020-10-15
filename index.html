@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COVID-19 Diagnosis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- p5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <!-- ml5 -->
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+    <style>
+        * {
+            color: white;
+        }
+        /* canvas {
+            border-radius: 12px;
+        } */
+    </style>
+
+  </head>
+
+  <body style="margin: 0px;">
+      <div>COVID-19 virus diagnosis from radiography</div>
+      <div>
+        <script>
+            // The video
+            let video;
+            // For displaying the label
+            let label1 = "Waiting for capture device";
+            let label2 = "Waiting for capture device";
+            let label3 = "Waiting for capture device";
+            let confidence1 = 0;
+            let confidence2 = 0;
+            let confidence3 = 0;
+            // Some variables
+            var w = window.innerWidth;
+            var h = window.innerHeight;  
+            let paddingRight = 10;
+            // The classifier
+            let classifier;
+            let modelURL = 'https://teachablemachine.withgoogle.com/models/V4ZNTcbKF/';
+            
+            // STEP 1: Load the model!
+            // Load important assets, images, data files, models before the setup()
+            function preload() {
+                // The model
+                classifier = ml5.imageClassifier(modelURL + 'model.json');
+            }
+            
+            // Connect to the capture device
+            var canvas;
+            function setup() {
+                // createCanvas(640, 480);
+                canvas = createCanvas(w, h);
+                canvas.position(0,0);
+                canvas.style('z-index', '-1');
+                // Create the video
+                video = createCapture(VIDEO);
+                video.hide();
+                // STEP 2: Start classifying
+                classifyVideo();
+            }
+            
+            // STEP 2 classify the videeo!
+            function classifyVideo() {
+                // Call the ML5 classify function on the video
+                // JS handles things asynchronously, it will take some time to classify the image in the video, and it will report an event back when it finished.
+                // gotResults is the function that will get called as callback.
+                classifier.classify(video, gotResults);
+            }
+            
+            // Draw the video on the canvas
+            function draw() {
+                background(0);
+                
+                
+
+                // Draw the video
+                image(video, w/2 - 320, 0);
+
+                // stroke(255, 204, 0);
+                // rect(w/2 - 320, h/2 - 240, 640, 480);
+            
+                // STEP 4: Draw the label
+                textSize(32);
+                textAlign(CENTER, CENTER);
+                fill(255);
+                text(label1, width / 2, height - 56);
+                text(confidence1.toFixed(5) + "%", width / 2, height - 16);
+
+                textSize(12);
+                textAlign(LEFT, CENTER);
+                fill(255);
+                text(label1, paddingRight, 20);
+                text(confidence1.toFixed(5) + "%", paddingRight, 40);
+                text(label2, paddingRight, 60);
+                text(confidence2.toFixed(5) + "%", paddingRight, 80);
+                text(label3, paddingRight, 100);
+                text(confidence3.toFixed(5) + "%", paddingRight, 120);
+
+                
+            }
+
+            // STEP 3: Get the classification
+            function gotResults(error, results) {
+                // Error
+                if (error) {
+                console.error(error);
+                return;
+                }
+                // Store the label and classify again
+                console.log(results);
+                // Just concern about the first object (with the highest confidence index)
+                label1 = results[0].label;
+                confidence1 = results[0].confidence * 100;
+                label2 = results[1].label;
+                confidence2 = results[1].confidence * 100;
+                label3 = results[2].label;
+                confidence3 = results[2].confidence * 100;
+                classifyVideo();
+            }
+      
+          </script>
+          
+      </div>
+  </body>
+</html>
