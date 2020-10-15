@@ -12,8 +12,6 @@
    - Objectives of the study
 2. Dataset
    - Data resources
-     - Spread Analysis
-     - Diagnosis
    - Data processing and classification
 3. Method:
    - Overall Approach: 
@@ -22,14 +20,14 @@
    - Detailed Design:
       - Jupyter Notebook
       - Teachable Machine
-4. Implementation: COVID-19 virus spread analysis
+4. [Implementation: COVID-19 virus spread analysis](#COVID-19-virus-spread-analysis)
    - [Data Processing: Confirmed cases](#Confirmed-cases)
-   - Data Processing: Deaths by COVID-19
-   - Data Processing: Recovered
-   - Data Processing: GDP per capita
-   - Join all dataset into one
-   - Calculate Correlation Matrix
-   - Visualization from data
+   - [Data Processing: Deaths by COVID-19](#Deaths-by-COVID-19)
+   - [Data Processing: Recovered](#Recovered)
+   - [Data Processing: GDP per capita](#GDP-per-capita)
+   - [Join all dataset into one](#Join-all-dataset-into-one)
+   - [Calculate Correlation Matrix](#Calculate-Correlation-Matrix)
+   - [Visualization from data](#Visualization-from-data)
 5. Implementation: COVID-19 virus diagnosis from radiography
    - Samples Gathering
    - Model Training
@@ -46,12 +44,49 @@
 
 ## Introduction
 
+<!-- Dataset -->
 ## Dataset
+#### Data Resources
+- [Novel Coronavirus (COVID-19) Cases Data](https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases) compiled by the Johns Hopkins University Center for Systems Science and Engineering ([JHU CCSE](https://data.humdata.org/organization/jhucsse))
+  - time_series_covid19_confirmed_global.csv
+  - time_series_covid19_deaths_global.csv
+  - time_series_covid19_recovered_global.csv
+- [GDP (Gross Domestic Product) per capita](https://ourworldindata.org/grapher/gdp-per-capita-worldbank) published by World Bank – World Development Indicators
+  - gdp-per-capita-worldbank.csv
+- [X-ray and CT images of COVID-19 patients dataset](https://github.com/ieee8023/covid-chestxray-dataset) on Github by Joseph Paul Cohen, Postdoctoral Fellow, Mila, University of Montreal
+  - [Approximately 1000 X-ray and CT images](https://github.com/ieee8023/covid-chestxray-dataset/tree/master/images) for traing and testing
+#### Data processing and classification
+```
+📁dataset
+├── 📁dataset_analysis
+│   ├── time_series_covid19_confirmed_global.csv
+│   ├── time_series_covid19_deaths_global.csv
+│   ├── time_series_covid19_recovered_global.csv
+│   └── gdp-per-capita-worldbank.csv
+└── 📁dataset_radiography
+    ├── 📁data_for_training
+    │   ├── 📁covid_infected
+    │   │   └── More than 800 JPEG images
+    │   └── 📁normal
+    │       └── More than 800 JPEG images
+    └── 📁data_for_testing
+        ├── 📁covid_infected
+        │   └── 100 JPEG images
+        └── 📁normal
+            └── 100 JPEG images
+```
 
 ## Method
+#### Overall Approach
+#### Detailed Design
+##### Modules
+- [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
+- [numpy](https://numpy.org/) (scientific computing)
+- [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
+- [matplotlib](https://matplotlib.org/) (visualizations)
 
 ## COVID-19 virus spread analysis
-
+<!-- COVID-19 virus spread analysis -->
 #### Note
 - The latest datasets can be used (from the sources I mentioned above), as long as the files' structure hasn't been changed.
 - Adjust the values in `.sort_values` method to the latest date in the datasets.
@@ -4880,7 +4915,6 @@ data.corr()
 
 
 ### Visualization from data
-________________________
 
 #### Recovery Rate
 
@@ -5265,6 +5299,19 @@ sns.regplot(x, y)
 > #### The maximum recovery rate of a country is not affected by its development. Developed countries are as vulnerable to COVID-19 pandemic as developing countries.
 
 ## COVID-19 virus diagnosis from radiography
+<!-- COVID-19 virus diagnosis from radiography -->
+### Sample Gathering
+
+### Model Trainging
+
+### Model Embedding
+
+### Testing
+
+
+
+
+
 
 ## Results
 
@@ -5273,26 +5320,3 @@ sns.regplot(x, y)
 
 
 
-
-
-
-### Dataset Resources
-
-- [Novel Coronavirus (COVID-19) Cases Data](https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases) compiled by the Johns Hopkins University Center for Systems Science and Engineering ([JHU CCSE](https://data.humdata.org/organization/jhucsse))
-  - time_series_covid19_confirmed_global.csv
-  - time_series_covid19_deaths_global.csv
-  - time_series_covid19_recovered_global.csv
-
-
-- [GDP (Gross Domestic Product) per capita](https://ourworldindata.org/grapher/gdp-per-capita-worldbank) published by World Bank – World Development Indicators
-  - gdp-per-capita-worldbank.csv
-
-### Modules
-
-- [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
-
-- [numpy](https://numpy.org/) (scientific computing)
-
-- [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
-
-- [matplotlib](https://matplotlib.org/) (visualizations)
