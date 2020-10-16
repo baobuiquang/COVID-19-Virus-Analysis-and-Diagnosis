@@ -8,11 +8,11 @@
 
 0. Abstract
 1. Introduction
-   - COVID-19 virus pandemic
-   - Objectives of the study
+   - [COVID-19 virus pandemic](#COVID-19-virus-pandemic)
+   - [Analysis and Diagnosis of COVID-19](#Analysis-and-Diagnosis-of-COVID-19)
 2. Dataset
-   - Data resources
-   - Data processing and classification
+   - [Data resources](#Data-Resources)
+   - [Data processing and classification](#Data-processing-and-classification)
 3. Method:
    - Overall Approach: 
       - Python
@@ -43,6 +43,14 @@
 ## Abstract
 
 ## Introduction
+#### COVID-19 virus pandemic
+Coronavirus disease (COVID-19) is an infectious global disease. The virus was identified in Wuhan, China in December 2019. COVID-19 disease is caused by the virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), a new virus in humans causing respiratory illness which can be spread from person-to-person.
+
+The World Health Organization (WHO) declared the COVID-19 outbreak a Public Health Emergency of International Concern (PHEIC) on 30 January 2020 and a pandemic on 11 March 2020.
+#### Analysis and Diagnosis of COVID-19
+Analysis, or the process of turning raw data into insights, can provide us with a view of how the virus is impacting the communities. Those insights can indicate if the development of a country affects its virus spread as well as the relationship between the infection rate, the death rate and the recovered rate of COVID-19 pandemic in some specific countries and the global.
+
+Quick diagnosis is important in preventing the spread of the Covid-19 pandemic. With the dataset of approximately 1000 images of chest X-ray collected, we can build a machine learning model to predict whether a new X-ray image is from a COVID-19 infected patient or a non-infected person.
 
 <!-- Dataset -->
 ## Dataset
@@ -78,12 +86,17 @@
 
 ## Method
 #### Overall Approach
+##### Python
+##### Machine Learning
+##### TensorFlow
 #### Detailed Design
-##### Modules
+##### Jupyter Notebook
+##### Python Modules
 - [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
 - [numpy](https://numpy.org/) (scientific computing)
 - [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
 - [matplotlib](https://matplotlib.org/) (visualizations)
+##### Teachable Machine
 
 ## COVID-19 virus spread analysis
 <!-- COVID-19 virus spread analysis -->
