@@ -37,7 +37,7 @@
 
     <div style="padding: 10px; font-size: 12px; position: absolute; left: 0;">
         COVID-19 Virus Diagnosis from Radiography using Machine Learning Model by <a href="https://buiquangbao.github.io/" target="_blank">Bui Quang Bao</a> <br>
-        ⚠ This research is intended for educational purposes only. <br>
+        ⚠ This research is intended for educational purposes only. Please do not use the results without real clinical researches!<br>
         <a href="#" target="_blank">Read the whole article on Github</a> <br>
         <a href="#" target="_blank">Open-source code on Github</a> <br>
     </div>
@@ -92,11 +92,28 @@
     function draw() {
         background(0);
         // Draw the video
+        
 
         rect(w/2 - videoWidth - 55, h/2 - videoHeight/2 - 5, videoWidth+9, videoHeight+9);
         image(flippedVideo, w/2 - videoWidth - 50, h/2 - videoHeight/2);
 
         
+        stroke('transparent');
+        // Vertically
+        rect(w/2 - videoWidth/8*1 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*2 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*3 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*4 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*5 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*6 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*7 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        // Horizontally
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*1, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*2, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*0, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 - videoHeight/6*1, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 - videoHeight/6*2, videoWidth, 0);
+        stroke('black');
 
         // Draw the label
         fill(255);
@@ -117,7 +134,7 @@
 
         textSize(14);
         textAlign(LEFT);
-        text("Notice: Keep the X-ray image filling the whole frame", w/2 - videoWidth - 50, h/2 - videoHeight/2 - 20);
+        text("Important Notice: Keep the X-ray image filling the whole frame", w/2 - videoWidth - 50, h/2 - videoHeight/2 - 20);
 
         textSize(18);
         textAlign(CENTER);

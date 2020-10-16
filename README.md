@@ -6,20 +6,16 @@
 
 #### Table of Contents
 
-0. Abstract
-1. Introduction
+0. [Abstract](#Abstract)
+1. [Introduction](#Introduction)
    - [COVID-19 virus pandemic](#COVID-19-virus-pandemic)
    - [Analysis and Diagnosis of COVID-19](#Analysis-and-Diagnosis-of-COVID-19)
-2. Dataset
+2. [Dataset](#Dataset)
    - [Data resources](#Data-Resources)
    - [Data processing and classification](#Data-processing-and-classification)
-3. Method:
-   - Overall Approach: 
-      - Python
-      - Machine Learning Model + TensorFlow
-   - Detailed Design:
-      - Jupyter Notebook
-      - Teachable Machine
+3. [Method](#Method)
+   - [Overall Approach](#Overall-Approach)
+   - [Detailed Design](#Detailed-Design)
 4. [Implementation: COVID-19 virus spread analysis](#COVID-19-virus-spread-analysis)
    - [Data Processing: Confirmed cases](#Confirmed-cases)
    - [Data Processing: Deaths by COVID-19](#Deaths-by-COVID-19)
@@ -28,12 +24,12 @@
    - [Join all dataset into one](#Join-all-dataset-into-one)
    - [Calculate Correlation Matrix](#Calculate-Correlation-Matrix)
    - [Visualization from data](#Visualization-from-data)
-5. Implementation: COVID-19 virus diagnosis from radiography
-   - Samples Gathering
-   - Model Training
-   - Model Embedding
-   - Testing
-7. Results:
+5. [Implementation: COVID-19 virus diagnosis from radiography](#COVID-19-virus-diagnosis-from-radiography)
+   - [Samples Gathering](#Samples-Gathering)
+   - [Model Training](#Model-Training)
+   - [Model Embedding](#Model-Embedding)
+   - [Testing](#Testing)
+7. Results
    - Conclusion
    - Accuracy
    - Strengths of the method
@@ -48,9 +44,9 @@ Coronavirus disease (COVID-19) is an infectious global disease. The virus was id
 
 The World Health Organization (WHO) declared the COVID-19 outbreak a Public Health Emergency of International Concern (PHEIC) on 30 January 2020 and a pandemic on 11 March 2020.
 #### Analysis and Diagnosis of COVID-19
-Analysis, or the process of turning raw data into insights, can provide us with a view of how the virus is impacting the communities. Those insights can indicate if the development of a country affects its virus spread as well as the relationship between the infection rate, the death rate and the recovered rate of COVID-19 pandemic in some specific countries and the global.
+Analysis, or the process of turning raw data into insights, can provide us with a view of how the virus influences the communities. Those insights can indicate if the development of a country affects its virus spread as well as the relationship between the infection rate, the death rate and the recovered rate of COVID-19 pandemic in some specific countries and on the global.
 
-Quick diagnosis is important in preventing the spread of the Covid-19 pandemic. With the dataset of approximately 1000 images of chest X-ray collected, we can build a machine learning model to predict whether a new X-ray image is from a COVID-19 infected patient or a non-infected person.
+The quick diagnosis method is significant in preventing the spread of the Covid-19 pandemic. With the dataset of approximately 1000 images of chest X-ray collected, we can build a machine learning model to predict whether a new X-ray image is from a COVID-19 infected patient or a non-infected person.
 
 <!-- Dataset -->
 ## Dataset
@@ -87,16 +83,35 @@ Quick diagnosis is important in preventing the spread of the Covid-19 pandemic. 
 ## Method
 #### Overall Approach
 ##### Python
+Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built-in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development. Python is commonly used to streamline large complex data sets.
+
+Python has a long list of powerful libraries available for all users. That’s a key factor that gives a strong push for Python at all, and in the data science, too. Libraries such as NumPy, Pandas are very powerful for data manipulation and libraries such as Matplotlib, Seaborn provide great visualization.
 ##### Machine Learning
+Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.
+
+The process of learning begins with observations or data, such as examples, direct experience, or instruction, in order to look for patterns in data and make better decisions in the future based on the examples that we provide. The primary aim is to allow the computers to learn automatically without human intervention or assistance and adjust actions accordingly.
+
+A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data. Once you have trained the model, you can use it to reason over data that it hasn't seen before, and make predictions about those data.
 ##### TensorFlow
+TensorFlow is an end-to-end open-source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML-powered applications.
+
+TensorFlow.js is a library for machine learning in JavaScript. Develop ML models in JavaScript, and use ML directly in the browser.
 #### Detailed Design
 ##### Jupyter Notebook
+The Jupyter Notebook is an open-source web application that allows us to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. 
+
+The Jupyter Notebook is used to support interactive data science and scientific computing across many programming languages, especially Python.
 ##### Python Modules
 - [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
 - [numpy](https://numpy.org/) (scientific computing)
 - [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
 - [matplotlib](https://matplotlib.org/) (visualizations)
 ##### Teachable Machine
+Teachable Machine is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. The models made with Teachable Machine are real TensorFlow.js models that work anywhere javascript runs, so they play nice with tools like Glitch, P5.js, Node.js & more.
+##### ml5.js
+ml5.js aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The folks building TensorFlow.js figured out that it is possible to use the web browser's built-in graphics processing unit (GPU) to do calculations that would otherwise run very slowly using the central processing unit (CPU). The ml5.js library provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js with no other external dependencies. 
+##### p5.js
+Using the metaphor of a sketch, p5.js has a full set of drawing functionality, consider the whole browser page as your sketch, including HTML5 objects for text, input, video, webcam, and sound.
 
 ## COVID-19 virus spread analysis
 <!-- COVID-19 virus spread analysis -->
@@ -4326,7 +4341,7 @@ dataset_recovered.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -4399,7 +4414,7 @@ dataset_recovered.head(1000)
   </tbody>
 </table>
 <p>188 rows × 1 columns</p>
-</div>
+</div> -->
 
 
 
@@ -4522,7 +4537,7 @@ data.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -4621,7 +4636,7 @@ data.head(1000)
   </tbody>
 </table>
 <p>188 rows × 3 columns</p>
-</div>
+</div> -->
 
 
 
@@ -4634,7 +4649,7 @@ data.head(1000)
 
 
 
-<div>
+<!-- <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -4740,7 +4755,7 @@ data.head(1000)
 </table>
 <p>161 rows × 4 columns</p>
 </div>
-
+ -->
 
 ```python
 # Remove the rows don't have data
@@ -5314,19 +5329,177 @@ sns.regplot(x, y)
 ## COVID-19 virus diagnosis from radiography
 <!-- COVID-19 virus diagnosis from radiography -->
 ### Sample Gathering
-
+```
+└── 📁dataset_radiography
+    ├── 📁data_for_training
+    │   ├── 📁covid_infected
+    │   │   └── More than 800 JPEG images
+    │   └── 📁normal
+    │       └── More than 800 JPEG images
+    └── 📁data_for_testing
+        ├── 📁covid_infected
+        │   └── 100 JPEG images
+        └── 📁normal
+            └── 100 JPEG images
+```
+More than 1600 samples, include 800 X-ray JPEG images of COVID-19 infected patients and 800 X-ray JPEG images of normal people are used to train the model. We keep the remain 100 images of each category for testing after the model was trained.
 ### Model Trainging
+Teachable Machine is using a technique called transfer learning. There is a pre-trained model. Somebody else already trained a model on many, many samples, and this model is called MobileNet. And the training data for this model is called ImageNet.
 
+MobileNet is a model that runs fast, works in the browser, and knows about a lot of different kinds of things. But it doesn't necessarily know whether the X-ray image belongs to a COVID-19 infected patient or a normal person. Maybe it's in there, maybe it's not. But what we could do is take the fact that it's learned how to boil the essence of images down into a bunch of different numbers, to then retrain it with our own images.
+
+And this allows us to train a machine learning model with 1600 samples from the dataset we have gathered. Because if we were training an image classification model from scratch without this base model, you probably would need a much larger data set.
 ### Model Embedding
 
+Import the `ml5.js` and `p5.js`
+
+``` html
+<!-- p5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+<!-- ml5 -->
+<script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+```
+
+Embed the model
+
+``` Javascript
+// Classifier Variable
+    let classifier;
+    // Model URL
+    let imageModelURL = 'https://teachablemachine.withgoogle.com/models/V4ZNTcbKF/';
+    // Video
+    let video;
+    let flippedVideo;
+    // To store the classification
+    let label = "Waiting for capture device";
+    let label1 = "Waiting for capture device";
+    let label2 = "Waiting for capture device";
+    let label3 = "Waiting for capture device";
+    let confidence = 0;
+    let confidence1 = 0.0;
+    let confidence2 = 0.0;
+    let confidence3 = 0.0;
+    // Some variables
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var videoWidth = w*0.3;
+    var videoHeight = videoWidth/4*3;
+    var lineHeight = 32;
+    // Load the model first
+    function preload() {
+        classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+    }
+
+    var canvas;
+    function setup() {
+        canvas = createCanvas(w, h);
+        canvas.position(0,0);
+        canvas.style('z-index', '-1');
+
+        // Create the video
+        video = createCapture(VIDEO);
+        video.size(videoWidth, videoHeight);
+        video.hide();
+
+        // flippedVideo = ml5.flipImage(video);
+        // Start classifying
+        classifyVideo();
+    }
+
+    function draw() {
+        background(0);
+        // Draw the video
+        
+
+        rect(w/2 - videoWidth - 55, h/2 - videoHeight/2 - 5, videoWidth+9, videoHeight+9);
+        image(flippedVideo, w/2 - videoWidth - 50, h/2 - videoHeight/2);
+
+        
+        stroke('transparent');
+        // Vertically
+        rect(w/2 - videoWidth/8*1 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*2 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*3 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*4 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*5 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*6 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        rect(w/2 - videoWidth/8*7 - 50, h/2 - videoHeight/2, 0, videoHeight);
+        // Horizontally
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*1, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*2, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 + videoHeight/6*0, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 - videoHeight/6*1, videoWidth, 0);
+        rect(w/2 - videoWidth - 50, h/2 - videoHeight/6*2, videoWidth, 0);
+        stroke('black');
+
+        // Draw the label
+        fill(255);
+        textSize(22);
+        textAlign(LEFT);
+
+        text(label, w/2, h/2 - videoHeight/2 + lineHeight);
+        text(confidence.toFixed(5) + "%", w/2, h/2 - videoHeight/2 + lineHeight*2);
+        rect(w/2, h/2 - videoHeight/2 + lineHeight*2.5, confidence * videoWidth /100, lineHeight/2);
+
+        text(label1, w/2, h/2 - videoHeight/2 + lineHeight*4.5);
+        text(confidence1.toFixed(5) + "%", w/2, h/2 - videoHeight/2 + lineHeight*5.5);
+        rect(w/2, h/2 - videoHeight/2 + lineHeight*6, confidence1 * videoWidth /100, lineHeight/2);
+
+        text(label2, w/2, h/2 - videoHeight/2 + lineHeight*8);
+        text(confidence2.toFixed(5) + "%", w/2, h/2 - videoHeight/2 + lineHeight*9);
+        rect(w/2, h/2 - videoHeight/2 + lineHeight*9.5, confidence2 * videoWidth /100, lineHeight/2);
+
+        textSize(14);
+        textAlign(LEFT);
+        text("Important Notice: Keep the X-ray image filling the whole frame", w/2 - videoWidth - 50, h/2 - videoHeight/2 - 20);
+
+        textSize(18);
+        textAlign(CENTER);
+        text("Diagnosis from Radiography", width / 2, height - lineHeight*3.5);
+        textSize(36);
+        text(label, width / 2, height - lineHeight*2);
+
+    }
+
+    // Get a prediction for the current video frame
+    function classifyVideo() {
+        flippedVideo = ml5.flipImage(video);
+        classifier.classify(flippedVideo, gotResult);
+        flippedVideo.remove();
+    }
+
+    // When we get a result
+    function gotResult(error, results) {
+        // If there is an error
+        if (error) {
+        console.error(error);
+        return;
+        }
+        // The results are in an array ordered by confidence.
+        // console.log(results[0]);
+        label = results[0].label;
+        label1 = results[1].label;
+        label2 = results[2].label;
+        // label3 = results[3].label;
+        confidence = results[0].confidence * 100;
+        confidence1 = results[1].confidence * 100;
+        confidence2 = results[2].confidence * 100;
+        // confidence3 = results[3].confidence;
+        // Classifiy again!
+        classifyVideo();
+    }
+```
 ### Testing
 
 
 
 
-
-
 ## Results
+
 
 ## References
 
