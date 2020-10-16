@@ -1,6 +1,6 @@
 ## COVID-19 Virus Analysis and Diagnosis
 
-##### COVID-19 (Sars Cov 2) virus spread analysis using Python and diagnosis from radiography using machine learning model.
+##### COVID-19 (Sars Cov 2) virus spread analysis using Python and diagnosis from radiography using machine learning model
 
 ⚠ This research is intended for **educational purposes only**. Please do not use the results without real clinical researches!
 
