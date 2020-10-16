@@ -1,0 +1,14 @@
+* {
+    color: white;
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+/* canvas {
+    border-radius: 12px;
+} */
+/* ------------------------ Custom Scroll Bar ------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
