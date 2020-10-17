@@ -31,12 +31,13 @@
    - [Model Training](#Model-Training)
    - [Model Embedding](#Model-Embedding)
    - [Testing](#Testing)
-7. Results
-   - Conclusion
-   - Accuracy
-   - Strengths of the method
-   - Limitations of the method
-8. References
+7. [Results](#Results)
+   - [Analysis Conclusion](#Analysis-Conclusion)
+   - [Diagnosis Accuracy](#Diagnosis-Accuracy)
+   - [Strengths of the method](#Strengths-of-the-method)
+   - [Limitations of the method](#Limitations-of-the-method)
+   - [Important Notice](#Important-Notice)
+8. [References](#References)
 
 ## Abstract
 
@@ -5324,9 +5325,7 @@ sns.regplot(x, y)
 
 ![png](assets/output_109_2.png)
     
-> #### The result shows that people who are living in a developed country (higher GDP per capita) are more prone to get infection of SarsCoV2 virus. 
 
-> #### The maximum recovery rate of a country is not affected by its development. Developed countries are as vulnerable to COVID-19 pandemic as developing countries.
 
 ## COVID-19 virus diagnosis from radiography
 <!-- COVID-19 virus diagnosis from radiography -->
@@ -5500,10 +5499,34 @@ Embed the model
 ![png](assets/diag-covid.gif)
 
 ## Results
+#### Analysis Conclusion
+- The result shows that people who are living in a more developed country (higher GDP per capita) are more prone to get infection of the COVID-19 virus.
+- The maximum recovery rate of a country is not affected by its development. Developed countries are as vulnerable to COVID-19 pandemic as developing countries.
 
+#### Diagnosis Accuracy
+196/200 (98%) test cases have the right results. The trained model has recognized whether an X-ray image belongs to a COVID-19 infected patient or a non-infected person.
+
+#### Strengths of the method
+- Based on the existing open-source platform, we can quickly build a machine learning model that can diagnose the COVID-19 disease from the radiography images.
+- The technique used here is transfer learning, we have MobileNet helps us to boil the essence of images down into a bunch of different numbers, and then we just retrain it with our own samples.
+
+#### Limitations of the method
+- The practical application of this research absolutely depends on the sample resource, namely the X-ray images of COVID-19 infected patient and non-infected person, both must be taken in the same condition and environment.
+
+#### Important Notice
+⚠ This research is intended for **educational purposes only**. As the "Limitations of the method" mentioned, the practical application of this research absolutely depends on the sample resource, and the trained model in this project does not satisfy it. Please do not use the results without real clinical researches!
 
 ## References
-
-
-
-
+- Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko,
+Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam. [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/pdf/1704.04861.pdf)
+- Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li and Li Fei-Fei Dept. of Computer Science, Princeton University. [ImageNet: A Large-Scale Hierarchical Image Database.](http://www.image-net.org/papers/imagenet_cvpr09.pdf)
+- World Health Organization. Coronavirus. https://www.who.int/health-topics/coronavirus
+- Centers for Disease Control and Prevention. COVID-19 Overview and Infection Prevention and Control Priorities in non-US Healthcare Settings. https://www.cdc.gov/coronavirus/2019-ncov/hcp/non-us-settings/overview/index.html
+- Wikipedia. Coronavirus disease 2019. https://en.wikipedia.org/wiki/Coronavirus_disease_2019
+- ExpertSystem. What is Machine Learning. https://expertsystem.com/machine-learning-definition/
+- Microsoft. What is a machine learning model? https://docs.microsoft.com/en-us/windows/ai/windows-ml/what-is-a-machine-learning-model
+- TensorFlow. Why TensorFlow. https://www.tensorflow.org/about
+- Google. Teachable Machine 2.0. https://blog.google/technology/ai/teachable-machine/
+- Python. What is Python? Executive Summary. https://www.python.org/doc/essays/blurb/
+- RTInsight. Why Python is Essential for Data Analysis. https://www.rtinsights.com/why-python-is-essential-for-data-analysis/
+- The Jupyter Notebook. https://jupyter.org/index.html
