@@ -5530,6 +5530,7 @@ Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam. [MobileNets: Efficien
 - RTInsight. Why Python is Essential for Data Analysis. https://www.rtinsights.com/why-python-is-essential-for-data-analysis/
 - The Jupyter Notebook. https://jupyter.org/index.html
 
-______________________
+
 > Please keep my name if you want to bring this article anywhere else.
+> 
 > [Bui Quang Bao](https://buiquangbao.github.io/)
