@@ -4,8 +4,7 @@
 
 ⚠ This research is intended for **educational purposes only**. Please do not use the results without real clinical researches!
 
-![png](assets/diagnosis-normal.gif)
-![png](assets/diagnosis-covid.gif)
+![png](assets/diagnosis-combine.gif)
 
 #### Table of Contents
 
