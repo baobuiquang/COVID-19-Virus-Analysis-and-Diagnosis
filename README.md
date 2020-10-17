@@ -5,9 +5,6 @@
 ⚠ This research is intended for **educational purposes only**. Please do not use the results without real clinical researches!
 
 ![png](assets/diag-combine.gif)
-![png](assets/output_16_1.png)
-![png](assets/output_105_2.png)
-
 
 #### Table of Contents
 
@@ -90,7 +87,7 @@ The quick diagnosis method is significant in preventing the spread of the Covid-
 ##### Python
 Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built-in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development. Python is commonly used to streamline large complex data sets.
 
-Python has a long list of powerful libraries available for all users. That’s a key factor that gives a strong push for Python at all, and in the data science, too. Libraries such as NumPy, Pandas are very powerful for data manipulation and libraries such as Matplotlib, Seaborn provide great visualization.
+Python has a long list of powerful libraries available for all users. That’s a key factor that gives a strong push for Python at all, and in the data science, too. Libraries such as [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/) are very powerful for data manipulation and libraries such as [MatplotLib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/) provide great visualization.
 ##### Machine Learning
 Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.
 
@@ -98,9 +95,9 @@ The process of learning begins with observations or data, such as examples, dire
 
 A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data. Once you have trained the model, you can use it to reason over data that it hasn't seen before, and make predictions about those data.
 ##### TensorFlow
-TensorFlow is an end-to-end open-source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML-powered applications.
+[TensorFlow](https://www.tensorflow.org/) is an end-to-end open-source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML-powered applications.
 
-TensorFlow.js is a library for machine learning in JavaScript. Develop ML models in JavaScript, and use ML directly in the browser.
+[TensorFlow.js](https://www.tensorflow.org/js) is a library for machine learning in JavaScript. Develop ML models in JavaScript, and use ML directly in the browser.
 #### Detailed Design
 ##### Jupyter Notebook
 The Jupyter Notebook is an open-source web application that allows us to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. 
@@ -112,11 +109,11 @@ The Jupyter Notebook is used to support interactive data science and scientific 
 - [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
 - [matplotlib](https://matplotlib.org/) (visualizations)
 ##### Teachable Machine
-Teachable Machine is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. The models made with Teachable Machine are real TensorFlow.js models that work anywhere javascript runs, so they play nice with tools like Glitch, P5.js, Node.js & more.
+Teachable Machine is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. The models made with Teachable Machine are real [TensorFlow.js](https://www.tensorflow.org/js) models that work anywhere javascript runs, so they play nice with tools like Glitch, P5.js, Node.js & more.
 ##### ml5.js
-ml5.js aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The folks building TensorFlow.js figured out that it is possible to use the web browser's built-in graphics processing unit (GPU) to do calculations that would otherwise run very slowly using the central processing unit (CPU). The ml5.js library provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js with no other external dependencies. 
+[ml5.js](https://ml5js.org/) aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The folks building TensorFlow.js figured out that it is possible to use the web browser's built-in graphics processing unit (GPU) to do calculations that would otherwise run very slowly using the central processing unit (CPU). The ml5.js library provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js with no other external dependencies. 
 ##### p5.js
-Using the metaphor of a sketch, p5.js has a full set of drawing functionality, consider the whole browser page as your sketch, including HTML5 objects for text, input, video, webcam, and sound.
+Using the metaphor of a sketch, [p5.js](https://p5js.org/) has a full set of drawing functionality, consider the whole browser page as your sketch, including HTML5 objects for text, input, video, webcam, and sound.
 
 ## COVID-19 virus spread analysis
 <!-- COVID-19 virus spread analysis -->
@@ -5349,9 +5346,9 @@ sns.regplot(x, y)
 ```
 More than 1600 samples, include 800 X-ray JPEG images of COVID-19 infected patients and 800 X-ray JPEG images of normal people are used to train the model. We keep the remain 100 images of each category for testing after the model was trained.
 ### Model Trainging
-Teachable Machine is using a technique called transfer learning. There is a pre-trained model. Somebody else already trained a model on many, many samples, and this model is called MobileNet. And the training data for this model is called ImageNet.
+Teachable Machine is using a technique called [transfer learning](https://www.tensorflow.org/tutorials/images/transfer_learning). There is a pre-trained model. Somebody else already trained a model on many, many samples, and this model is called [MobileNet](https://arxiv.org/pdf/1704.04861.pdf). And the training data for this model is called [ImageNet](http://www.image-net.org/papers/imagenet_cvpr09.pdf).
 
-MobileNet is a model that runs fast, works in the browser, and knows about a lot of different kinds of things. But it doesn't necessarily know whether the X-ray image belongs to a COVID-19 infected patient or a normal person. Maybe it's in there, maybe it's not. But what we could do is take the fact that it's learned how to boil the essence of images down into a bunch of different numbers, to then retrain it with our own images.
+[MobileNet](https://arxiv.org/pdf/1704.04861.pdf) is a model that runs fast, works in the browser, and knows about a lot of different kinds of things. But it doesn't necessarily know whether the X-ray image belongs to a COVID-19 infected patient or a normal person. Maybe it's in there, maybe it's not. But what we could do is take the fact that it's learned how to boil the essence of images down into a bunch of different numbers, to then retrain it with our own images.
 
 And this allows us to train a machine learning model with 1600 samples from the dataset we have gathered. Because if we were training an image classification model from scratch without this base model, you probably would need a much larger data set.
 ### Model Embedding
@@ -5499,9 +5496,8 @@ Embed the model
     }
 ```
 ### Testing
-
-
-
+![png](assets/diag-normal.gif)
+![png](assets/diag-covid.gif)
 
 ## Results
 
