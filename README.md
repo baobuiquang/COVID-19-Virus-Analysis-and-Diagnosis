@@ -5,6 +5,8 @@
 ⚠ This research is intended for **educational purposes only**. Please do not use the results without real clinical researches!
 
 ![png](assets/diagnosis-combine.gif)
+![png](assets/output_16_1.png)
+![png](assets/output_105_2.png)
 
 #### Table of Contents
 
