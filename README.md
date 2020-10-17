@@ -1,14 +1,15 @@
 ## COVID-19 Virus Analysis and Diagnosis
 
-##### COVID-19 (Sars Cov 2) virus spread analysis using Python and diagnosis from radiography using machine learning model
+#### COVID-19 (Sars Cov 2) virus spread analysis using Python and diagnosis from radiography using machine learning model
+
+Author: [Bui Quang Bao](https://buiquangbao.github.io/)
 
 ⚠ This research is intended for **educational purposes only**. Please do not use the results without real clinical researches!
 
 ![png](assets/diag-combine.gif)
 
-#### Table of Contents
+### Table of Contents
 
-0. [Abstract](#Abstract)
 1. [Introduction](#Introduction)
    - [COVID-19 virus pandemic](#COVID-19-virus-pandemic)
    - [Analysis and Diagnosis of COVID-19](#Analysis-and-Diagnosis-of-COVID-19)
@@ -38,8 +39,6 @@
    - [Limitations of the method](#Limitations-of-the-method)
    - [Important Notice](#Important-Notice)
 8. [References](#References)
-
-## Abstract
 
 ## Introduction
 #### COVID-19 virus pandemic
@@ -84,36 +83,36 @@ The quick diagnosis method is significant in preventing the spread of the Covid-
 ```
 
 ## Method
-#### Overall Approach
-##### Python
+### Overall Approach
+#### Python
 Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built-in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development. Python is commonly used to streamline large complex data sets.
 
 Python has a long list of powerful libraries available for all users. That’s a key factor that gives a strong push for Python at all, and in the data science, too. Libraries such as [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/) are very powerful for data manipulation and libraries such as [MatplotLib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/) provide great visualization.
-##### Machine Learning
+#### Machine Learning
 Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.
 
 The process of learning begins with observations or data, such as examples, direct experience, or instruction, in order to look for patterns in data and make better decisions in the future based on the examples that we provide. The primary aim is to allow the computers to learn automatically without human intervention or assistance and adjust actions accordingly.
 
 A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data. Once you have trained the model, you can use it to reason over data that it hasn't seen before, and make predictions about those data.
-##### TensorFlow
+#### TensorFlow
 [TensorFlow](https://www.tensorflow.org/) is an end-to-end open-source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML-powered applications.
 
 [TensorFlow.js](https://www.tensorflow.org/js) is a library for machine learning in JavaScript. Develop ML models in JavaScript, and use ML directly in the browser.
-#### Detailed Design
-##### Jupyter Notebook
+### Detailed Design
+#### Jupyter Notebook
 The Jupyter Notebook is an open-source web application that allows us to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. 
 
 The Jupyter Notebook is used to support interactive data science and scientific computing across many programming languages, especially Python.
-##### Python Modules
+#### Python Modules
 - [pandas](https://pandas.pydata.org/) (data analysis and manipulation)
 - [numpy](https://numpy.org/) (scientific computing)
 - [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
 - [matplotlib](https://matplotlib.org/) (visualizations)
-##### Teachable Machine
+#### Teachable Machine
 Teachable Machine is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. The models made with Teachable Machine are real [TensorFlow.js](https://www.tensorflow.org/js) models that work anywhere javascript runs, so they play nice with tools like Glitch, P5.js, Node.js & more.
-##### ml5.js
+#### ml5.js
 [ml5.js](https://ml5js.org/) aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The folks building TensorFlow.js figured out that it is possible to use the web browser's built-in graphics processing unit (GPU) to do calculations that would otherwise run very slowly using the central processing unit (CPU). The ml5.js library provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js with no other external dependencies. 
-##### p5.js
+#### p5.js
 Using the metaphor of a sketch, [p5.js](https://p5js.org/) has a full set of drawing functionality, consider the whole browser page as your sketch, including HTML5 objects for text, input, video, webcam, and sound.
 
 ## COVID-19 virus spread analysis
