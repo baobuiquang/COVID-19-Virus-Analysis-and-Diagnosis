@@ -5326,7 +5326,7 @@ sns.regplot(x, y)
 
 ## COVID-19 virus diagnosis from radiography
 <!-- COVID-19 virus diagnosis from radiography -->
-### Sample Gathering
+### Samples Gathering
 ```
 └── 📁dataset_radiography
     ├── 📁data_for_training
