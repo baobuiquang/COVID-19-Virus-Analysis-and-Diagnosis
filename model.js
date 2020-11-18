@@ -45,7 +45,11 @@ function draw() {
     background(0);
     // Draw the video
 
-
+    fill(
+        label=="Normal"?0:label=="COVID-19 Infected"?255:255, 
+        label=="Normal"?255:label=="COVID-19 Infected"?0:255, 
+        label=="Normal"?0:label=="COVID-19 Infected"?0:255,);
+    
     rect(w / 2 - videoWidth - 55, h / 2 - videoHeight / 2 - 5, videoWidth + 9, videoHeight + 9);
     image(flippedVideo, w / 2 - videoWidth - 50, h / 2 - videoHeight / 2);
 
