@@ -106,8 +106,6 @@ The Jupyter Notebook is used to support interactive data science and scientific 
 - [numpy](https://numpy.org/) (scientific computing)
 - [seaborn](https://seaborn.pydata.org/) (statistical data visualization)
 - [matplotlib](https://matplotlib.org/) (visualizations)
-#### Teachable Machine
-Teachable Machine is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. The models made with Teachable Machine are real [TensorFlow.js](https://www.tensorflow.org/js) models that work anywhere javascript runs, so they play nice with tools like Glitch, P5.js, Node.js & more.
 #### ml5.js
 [ml5.js](https://ml5js.org/) aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The folks building TensorFlow.js figured out that it is possible to use the web browser's built-in graphics processing unit (GPU) to do calculations that would otherwise run very slowly using the central processing unit (CPU). The ml5.js library provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js with no other external dependencies. 
 #### p5.js
