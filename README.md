@@ -5339,7 +5339,7 @@ sns.regplot(x, y)
             └── 100 JPEG images
 ```
 More than 1600 samples, include 800 X-ray JPEG images of COVID-19 infected patients and 800 X-ray JPEG images of normal people are used to train the model. We keep the remain 100 images of each category for testing after the model was trained.
-### Model Trainging
+### Model Training
 Using a technique called [transfer learning](https://www.tensorflow.org/tutorials/images/transfer_learning). There is a pre-trained model. Somebody else already trained a model on many, many samples, and this model is called [MobileNet](https://arxiv.org/pdf/1704.04861.pdf). And the training data for this model is called [ImageNet](http://www.image-net.org/papers/imagenet_cvpr09.pdf).
 
 [MobileNet](https://arxiv.org/pdf/1704.04861.pdf) is a model that runs fast, works in the browser, and knows about a lot of different kinds of things. But it doesn't necessarily know whether the X-ray image belongs to a COVID-19 infected patient or a normal person. Maybe it's in there, maybe it's not. But what we could do is take the fact that it's learned how to boil the essence of images down into a bunch of different numbers, to then retrain it with our own images.
